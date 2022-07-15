@@ -1,0 +1,21 @@
+extends layout
+
+block content
+   h1= title
+
+   ul
+   each item in items
+      li
+         a(href=foundCategory.url+item.url) #{item.name}
+   else 
+      li There are no items
+   
+   p
+      a(href=foundCategory.url+'/additem') Add new item
+   p
+      a(href=foundCategory.url+'/update') Update category
+
+   if items.length === 0
+      form(method='POST' action=`${foundCategory.url}/delete`)
+         input#categoryid(type='hidden', name='categoryid', required='true', value=foundCategory._id)
+         button(type='submit') Delete category

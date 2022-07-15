@@ -1,0 +1,14 @@
+extends layout
+
+block content
+   h1= title
+
+   form(method='POST' action='')
+      label(for='name') Category:
+      input#name(type='text', name='name' value=(foundCategory === undefined ? '' : foundCategory.name))
+      label(for='description') Description:
+      input#description(type='text', name='description' value=(foundCategory === undefined ? '' : foundCategory.description))
+      button(type='submit') Submit
+      
+      //- 
+      //- 

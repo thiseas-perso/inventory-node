@@ -1,0 +1,21 @@
+extends layout
+
+block content
+   h1= title
+
+   form(method='POST' action='')
+      div.form-group
+         label(for='name') Name:
+         input#name(type='text', name='name', required='true')
+      div.form-group
+         label(for='description') Description:
+         input#description(type='text', name='description', required='true')
+      div.form-group
+         label(for='price') Price:
+         input#price(type='number', name='price', required='true')
+      div.form-group
+         label(for='category') Category:
+         select#category(type='select', name='category', placeholder='Select category', required='true')
+            for category in categories 
+               option(value=category._id) #{category.name}
+      button(type='submit') Submit
